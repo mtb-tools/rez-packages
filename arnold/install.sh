@@ -20,7 +20,7 @@ esac
 
 ARNOLD_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
-INSTALL_FILE="${REZ_BUILD_SOURCE_PATH}/../installers/Arnold-${ARNOLD_VERSION}-${OS}.tgz"
+INSTALL_FILE="${REZ_BUILD_SOURCE_PATH}/installers/Arnold-${ARNOLD_VERSION}-${OS}.tgz"
 
 # extract archive content
 tar -xf "${INSTALL_FILE}" -C "${REZ_BUILD_INSTALL_PATH}"
