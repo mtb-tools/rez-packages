@@ -12,10 +12,12 @@ authors = [
     "Academy Software Foundation"
 ]
 
-variants = [
-  # ["platform-linux"],
-  ["platform-osx"]
-]
+@early()
+def variants():
+    from rez.package_py_utils import expand_requires
+
+    requires = ["platform-**", "arch-**"]  # , "os-**"]
+    return [expand_requires(*requires)]
 
 uuid = "repository.%s" % name
 

@@ -9,10 +9,12 @@ version = '4.3.0'
 
 authors = ["Sam Leffler", "Silicon Graphics"]
 
-variants = [
-    # ["platform-linux"],
-    ["platform-osx"],
-]
+@early()
+def variants():
+    from rez.package_py_utils import expand_requires
+
+    requires = ["platform-**", "arch-**"]  # , "os-**"]
+    return [expand_requires(*requires)]
 
 private_build_requires = [
     "jpeg-2+"
